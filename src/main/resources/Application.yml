@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: CustomerManagement
+    name: LeadManagement
 
   datasource:
     url: jdbc:mysql://localhost:3306/jpa18?createDatabaseIfNotExist=true

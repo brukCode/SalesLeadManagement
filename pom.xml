@@ -12,35 +12,30 @@
         <relativePath/> 
     </parent>
 
-<<<<<<< HEAD
     <groupId>com.bk.LeadManagement</groupId>
     <artifactId>LeadManagement</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>LeadManagement</name>
-=======
-    <groupId>com.bk.CustomerManagement</groupId>
-    <artifactId>CustomerManagement</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>CustomerManagement</name>
->>>>>>> origin/main
     <description>Demo project for Spring Boot</description>
 
     <properties>
         <java.version>17</java.version>
-        
-        <!-- ✅ Added Spring Cloud version property to ensure compatibility -->
         <spring-cloud.version>2022.0.4</spring-cloud.version>
     </properties>
 
-<<<<<<< HEAD
-    <!-- ✅ Added missing Spring Cloud BOM to manage dependency versions automatically -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-
-=======
-    
->>>>>>> origin/main
     <dependencies>
-        <!-- Spring Boot Dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -56,14 +51,12 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- MySQL Connector -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -71,47 +64,20 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Spring Boot Starter for Testing -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        
-        <!-- ✅ Fixed Eureka Client Dependency (Now managed by BOM) -->
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-
     </dependencies>
-    
-<<<<<<< HEAD
-        <dependencyManagement>
-=======
-    <!-- ✅ Added missing Spring Cloud BOM to manage dependency versions automatically -->
-    <dependencyManagement>
->>>>>>> origin/main
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
-<<<<<<< HEAD
-=======
-    
-
-
->>>>>>> origin/main
     <build>
         <plugins>
-            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -129,7 +95,6 @@
                 </configuration>
             </plugin>
 
-            <!-- Spring Boot Maven Plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
