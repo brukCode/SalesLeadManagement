@@ -1,0 +1,156 @@
+
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> origin/main
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+<<<<<<< HEAD
+# Ignore build and Maven target directory
+target/
+*.class
+
+# Ignore logs and temp files
+*.log
+logs/
+tmp/
+
+# Ignore IDE configurations
+.idea/
+*.iws
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+=======
+
+
+# Ignore build artifacts
+*.jar
+*.war
+*.ear
+
+# Ignore Maven wrapper files except maven-wrapper.jar
+.mvn/
+!.mvn/wrapper/maven-wrapper.jar
+mvnw
+mvnw.cmd
+>>>>>>> origin/main
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+<<<<<<< HEAD
+# Ignore Maven wrapper files
+.mvn/
+mvnw
+mvnw.cmd
+
+
+# Ignore target directory (build output)
+target/
+
+=======
+>>>>>>> origin/main
+# Ignore logs and temp files
+*.log
+logs/
+tmp/
+
+<<<<<<< HEAD
+# Ignore compiled Java files
+*.class
+
+# Ignore JAR, WAR, and EAR files
+*.jar
+*.war
+*.ear
+
+# Ignore Maven Wrapper files except for the essential JAR
+.mvn/
+!mvn/wrapper/maven-wrapper.jar
+mvnw
+mvnw.cmd
+
+# Ignore IDE-specific files
+
+### Spring Tool Suite (STS) ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+=======
+# Ignore IDE-specific files
+### Eclipse ###
+.classpath
+.project
+.settings/
+.apt_generated
+>>>>>>> origin/main
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+
+<<<<<<< HEAD
+### VS Code ###
+.vscode/
+*.code-workspace
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore environment variable files (if using env configs)
+.env
+*.env
+
+# Ignore database files
+*.db
+*.sql
+
+=======
+# Ignore Node.js / Frontend related files (if applicable)
+node_modules/
+dist/
+build/
+>>>>>>> origin/main
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
