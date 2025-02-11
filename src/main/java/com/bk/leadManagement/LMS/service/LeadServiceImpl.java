@@ -89,32 +89,42 @@ public class LeadServiceImpl implements LeadService {
 
         Lead lead = leadOptional.get();
 
-        // Prepare customer request body
+        // ✅ Correct customer registration URL
+        String registerCustomerUrl = "http://localhost:8222/customers/register";
+
+        // Prepare customer request payload
         Map<String, Object> customerRequest = new HashMap<>();
         customerRequest.put("firstName", lead.getFirstName());
         customerRequest.put("lastName", lead.getLastName());
         customerRequest.put("email", lead.getEmail());
         customerRequest.put("phone", lead.getPhone());
         customerRequest.put("company", lead.getCompany());
-        customerRequest.put("customFields", lead.getCustomFields());
 
-        // Call Customer Management Service (CMS) to register the customer
         ResponseEntity<String> response;
         try {
-            response = restTemplate.postForEntity(
-                "http://localhost:8081/customers/register", customerRequest, String.class
-            );
+            response = restTemplate.postForEntity(registerCustomerUrl, customerRequest, String.class);
         } catch (Exception e) {
             System.err.println("❌ Lead conversion failed: " + e.getMessage());
-            return false;
+            return false; // Return false on failure
         }
 
-        // If successful, delete lead
         if (response.getStatusCode().is2xxSuccessful()) {
-            leadRepository.delete(lead);
-            return true;
+            leadRepository.delete(lead); // Delete the lead after conversion
+            return true; // ✅ Return true on success
         }
 
-        return false;
+        return false; // Return false if customer creation failed
     }
+    
+    @Override
+    public boolean deleteAllLeads() {
+        long count = leadRepository.count();
+        if (count == 0) {
+            return false; // No leads found, return false
+        }
+
+        leadRepository.deleteAll();
+        return true; // Successfully deleted, return true
+    }
+
 }

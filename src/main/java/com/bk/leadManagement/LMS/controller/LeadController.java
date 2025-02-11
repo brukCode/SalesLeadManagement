@@ -37,10 +37,22 @@ public class LeadController {
         }
     }
     
-    @GetMapping("/all")
+    @GetMapping("/getAll")
     public ResponseEntity<List<LeadResponseDto>> getAllLeads() {
        // log.info("📋 Fetching all leads...");
         List<LeadResponseDto> leads = leadService.getAllLeads();
         return ResponseEntity.ok(leads);
     }
+    
+    @DeleteMapping("/deleteAll")
+    public ResponseEntity<String> deleteAllLeads() {
+        boolean deleted = leadService.deleteAllLeads();
+        if (deleted) {
+            return ResponseEntity.ok("✅ All leads deleted successfully.");
+        } else {
+            return ResponseEntity.status(404).body("❌ No leads found to delete.");
+        }
+    }
+
+
 }

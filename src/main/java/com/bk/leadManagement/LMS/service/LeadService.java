@@ -10,4 +10,5 @@ public interface LeadService {
     List<LeadResponseDto> getAllLeads(); // Get all leads
     LeadResponseDto getLeadById(Long leadId); // Get lead by ID
     boolean convertLeadToCustomer(Long leadId); // Convert a lead to a customer
+    boolean deleteAllLeads();
 }
